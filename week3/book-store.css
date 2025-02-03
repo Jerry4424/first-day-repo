@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table{
+    border-collapse: collapse;
+    border: 1px solid #c6c7cc;
+    margin: 20px auto;
+}
+
+td{
+    border: 1px solid #c6c7cc;
+    padding: 10px;
+    text-align: left;
+}
+th{
+    border: 1px solid #c6c7cc;
+    padding: 10px;
+    text-align: center;
+}
+
+.colspan-example{
+    text-align: center;
+    font-weight: bold;
+}
+.currency{
+    font-weight: bold;
+}
+.special-symbol{
+    font-style: italic;
+}
