@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="userform" onsubmit="return validateForm()">
+        <label for="username">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+            function validateForm() {
+                const nameField = document.getElementById('name');
+
+                if (nameField.value === '') {
+                    alert('Name is required. Please submit your name.');
+                    return false;
+                }
+                alert('form submitted successfully');
+                return true;
+            }
+    </script>
+</body>
+</html>

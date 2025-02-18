@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img id="image" src="resources/rock.jfif" alt="Image" width="300" height="200">    
+
+    <button id="changeimagebtn">Change image</button> 
+    
+    <script>
+        const image = document.getElementById('image');
+        const button = document.getElementById('changeimagebtn');  
+
+        function changeImage() {
+            if (image.src === 'resources/sky.jpg') {
+                image.src = 'resources/rock.jfif';
+            } else {
+                image.src = 'resources/sky.jpg';
+            }
+        }
+
+        button.addEventListener('click', changeImage);
+    </script>
+</body>
+</html>

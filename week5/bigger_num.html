@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td{
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1> Bigger Numbers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Input</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="num1"></td>
+                <td id="result1"></td>
+            </tr>
+            <tr>
+                <td id="num2"></td>
+                <td></td>                
+            </tr>
+
+        </tbody>
+    </table>
+ 
+    <script>
+        const num1 = (Math.random() *100) | 0;
+        const num2 = (Math.random() *100) | 0;
+
+        let bigger;
+
+        if (num1 > num2) {
+            bigger = num1;
+        } else if (num2 > num1) {
+            bigger = num2;
+        }else {
+            bigger = num1
+        }
+
+        document.getElementById('num1').textContent = num1;
+
+        document.getElementById('num2').textContent = num2;
+
+        document.getElementById('result1').textContent = bigger;
+
+        document.getElementById('result2').textContent = bigger;
+    </script>
+</body>
+</html>

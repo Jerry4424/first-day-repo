@@ -1,0 +1,61 @@
+><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="countdownInput"> Enter countdown time (in seconds):</label>
+    <input type="number" id="countdownInput" placeholder="Enter Time" min="1">
+    <button id="startBtn">Start Countdown</button>
+    <p id="countdownDisplay">Time remain: 0 seconds</p>
+
+
+    <script>
+        let countdownTimer;
+        let countdownValue;
+        let isCountingDown = false;
+
+        const countdownInput = document.getElementById('countdownInput');
+        const startBtn = document.getElementById('startBtn');
+        const countdownDisplay = document.getElementById('countdownDisplay');
+
+        function startcountdown() {
+            if (isCountingDown) {
+                return;
+            }
+
+            countdownValue = parseInt(countdownInput.value);
+            
+            if (countdownValue === '' || countdownValue <= 0) {
+                alert('Please enter a value');
+                return;
+            }
+
+            isCountingDown = true;
+
+            countdownInput.style.display = 'none';
+            startBtn.textContent = 'Counting Down...';
+
+
+            countdownTimer = setInterval(function() {
+                countdownDisplay.textContent = 'Time remain: ' + countdownValue + ' seconds';
+                
+                countdownValue--;
+
+                if (countdownValue < 0) {
+                    clearInterval(countdownTimer);
+                    countdownDisplay.textContent = 'Time is up!';
+                    alert('Countdown has finished!');
+                    countdownInput.style.display = 'inline';
+                    startBtn.textContent = 'Start Countdown';
+                    isCountingDown = false;
+                }
+            }, 1000);
+        }
+
+        startBtn.addEventListener('click', startcountdown);
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text Holder" ondblclick="grow()"></p>
+    <p class="test"></p>
+
+
+<script>
+    let size=12;
+
+    function grow(){
+        size+=5;
+        document.getElementById('textholder').style="font-size:" +size+"px";
+    }
+    
+    function sayHello(name){
+        alert('Hello '+name);
+    }
+    function press(){
+        let name= document.getElementById('username').value;
+        sayHello(name)
+    }
+
+    p.style="font-size:20px; color green;";
+
+    if(true){
+        let x= 20;
+        var y=30;
+        document.writeln(x)
+        document.writeln(y)
+    }
+    document.writeln(y)
+
+    for(var i=0; i<0; i++){
+        document.writeIn("<h1> Hello world</h1>");
+    }
+
+    document.writeln("<p   ")
+  
+    document.writeIn("<p class=csci295> welcome to full stack</p>");
+
+    document.getElementById('TextHolder').innerHTML-"This is a demo text";
+
+    document.getElementsByClassName('csci295')[0].innerHTML="changed text";
+    
+    console.log("This is a text")
+
+    alert('Hello')
+</script>
+
+    <input type="text" id="username" placeholder="Enter your name"/>
+    <button id="btnpressable" oneclick="grow()" >press me!</button>">
+</body>
+</html>

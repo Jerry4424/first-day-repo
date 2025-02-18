@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #colorDiv{
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            background-color: lightgray;
+            text-align: center;
+            line-height: 200px;
+            font-family: Arial, Sans-serif;
+            font-size: 20px;
+            color: black;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="colorDiv">Click Or Hover</div>
+    <script>
+        var colorDiv = document.getElementById("colorDiv");
+        function changebackgroundcolorOnClick() {
+            colorDiv.style.backgroundColor = "rgb(100,200,100)";
+        }
+
+        function changebackgroundcolorOnHover() {
+            colorDiv.style.backgroundColor = "rgb(255,165,0)";
+        }
+
+        colorDiv.addEventListener("click", changebackgroundcolorOnClick);
+
+        colorDiv.addEventListener("mouseover", changebackgroundcolorOnHover);
+
+        colorDiv.addEventListener("mouseout", function () {
+            colorDiv.style.backgroundColor = "lightgray";
+        }); 
+        
+    </script>
+</body>
+</html>
