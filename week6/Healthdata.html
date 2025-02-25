@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Data Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="HealthData.css">
+</head>
+<body>
+    <nav>
+        <ul>
+
+            <li><span id="totalCases">Total Cases: </span></li>
+            <li><a href="#" id="casesLink">Cases</a></li>
+            <li><a href="#" id="deathsLink">Deaths</a></li>
+            <li><a href="#" id="recoveredLink">Recovered</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
+
+    <script>
+        let chart;
+
+        fetch('https://disease.sh/v3/covid-19/historical/all?lastdays=all')
+            .then(response => response.json())
+            .then(data => {
+                const labels = Object.keys(data.cases);
+                const casesData = Object.values(data.cases);
+                const deathsData = Object.values(data.deaths);
+                const recoveredData = Object.values(data.recovered);
+
+                const totalCases = casesData[casesData.length - 1];
+                document.getElementById('totalCases').textContent = `Total Cases: ${totalCases}`;
+
+                const ctx = document.getElementById('myChart').getContext('2d');
+                chart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Number of Cases Worldwide',
+                            data: casesData,
+                            fill: false,
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+                document.getElementById('casesLink').addEventListener('click', function() {
+                    chart.data.datasets[0].data = casesData;
+                    chart.data.datasets[0].label = 'Number of Cases Worldwide';
+                    chart.data.datasets[0].borderColor = 'rgb(75, 192, 192)';
+                    chart.update();
+                });
+
+                document.getElementById('deathsLink').addEventListener('click', function() {
+                    chart.data.datasets[0].data = deathsData;
+                    chart.data.datasets[0].label = 'Number of Deaths Worldwide';
+                    chart.data.datasets[0].borderColor = 'rgb(255, 99, 132)';
+                    chart.update();
+                });
+
+                document.getElementById('recoveredLink').addEventListener('click', function() {
+                    chart.data.datasets[0].data = recoveredData;
+                    chart.data.datasets[0].label = 'Number of Recovered Worldwide';
+                    chart.data.datasets[0].borderColor = 'rgb(54, 162, 235)';
+                    chart.update();
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                document.getElementById('totalCases').textContent = 'Total Cases: Error';
+            });
+    </script>
+</body>
+</html>
