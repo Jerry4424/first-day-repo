@@ -1,17 +1,16 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #1e1e1e; /* Dark Gray */
-    color: #f1f1f1; /* Light Gray */
+    background-color: #1e1e1e; 
+    color: #f1f1f1; 
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body takes full height */
+    min-height: 100vh;
 }
 
-/* Header */
+
 header {
     background: #2a2a2a;
     color: white;
@@ -20,14 +19,13 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-/* General Styles */
 
-/* Header Title */
+
 header h1 {
     margin-left: 20px;
 }
 
-/* Navigation */
+
 nav {
     margin-right: 20px;
 }
@@ -50,49 +48,47 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #3399ff; /* Change hover effect to blue */
+    color: #3399ff; 
 }
 
 
-/* About Me Section */
+
 #about {
     padding: 40px;
     text-align: center;
 }
 
-/* About Me Title */
 #about h2 {
-    color: #3399ff; /* Keep Blue Title */
+    color: #3399ff; 
     border-bottom: 2px solid #3399ff;
     display: inline-block;
 }
 
-/* About Me Paragraph - Align Left, Keep Centered */
+
 #about p {
-    max-width: 600px; /* Restrict width */
-    margin: 0 auto; /* Center block */
-    text-align: left; /* Align text to the left */
+    max-width: 600px; 
+    margin: 0 auto;
+    text-align: left; 
     line-height: 1.6;
 }
 
-/* About Me Bullet Points - Centered */
+
 #about ul {
     list-style: none;
     padding: 0;
-    max-width: 600px; /* Keep list width manageable */
-    margin: 20px auto; /* Center the entire list */
-    text-align: center; /* Align the text in the center */
+    max-width: 600px; 
+    margin: 20px auto; 
+    text-align: center;
 }
 
 #about ul li {
-    display: inline-block; /* Prevents full-width bullets */
+    display: inline-block; 
     background: #3a3a3a;
     padding: 10px 15px;
     border-radius: 5px;
     margin: 5px 0;
 }
 
-/* Projects */
 .project-card {
     display: inline-block;
     width: 300px;
@@ -112,7 +108,7 @@ nav ul li a:hover {
 .project-card a {
     display: inline-block;
     margin-top: 10px;
-    color: #3399ff; /* Change links to blue */
+    color: #3399ff; 
     text-decoration: none;
 }
 
@@ -122,7 +118,7 @@ nav ul li a:hover {
     transition: 0.3s ease-in-out;
 }
 
-/* Contact Form */
+
 form {
     max-width: 400px;
     margin: auto;
@@ -132,7 +128,7 @@ form {
 label {
     display: block;
     margin-top: 10px;
-    color: #3399ff; /* Change labels to blue */
+    color: #3399ff; 
 }
 
 input, textarea {
@@ -150,7 +146,7 @@ button {
     width: 100%;
     margin-top: 10px;
     padding: 10px;
-    background: #3399ff; /* Change button background to blue */
+    background: #3399ff;
     color: black;
     border: none;
     cursor: pointer;
@@ -161,7 +157,7 @@ button:hover {
     background: #1e7cd9;
 }
 
-/* Footer */
+
 footer {
     background: #2a2a2a;
     color: white;
@@ -170,10 +166,9 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
-    margin-top: auto; /* Push footer to the bottom */
+    margin-top: auto;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
